@@ -9,21 +9,27 @@ using System.Text;
 // OBSERVAÇÃO: Você pode usar o comando "Renomear" no menu "Refatorar" para alterar o nome da classe "Service" no arquivo de código, svc e configuração ao mesmo tempo.
 public class Service : IService
 {
-	public string GetData(int value)
-	{
-		return string.Format("You entered: {0}", value);
-	}
+    public void Delete(int idExercicio)
+    {
+        ExercicioDal exercicioDal = new ExercicioDal();
+        exercicioDal.Delete(idExercicio);
+    }
 
-	public CompositeType GetDataUsingDataContract(CompositeType composite)
-	{
-		if (composite == null)
-		{
-			throw new ArgumentNullException("composite");
-		}
-		if (composite.BoolValue)
-		{
-			composite.StringValue += "Suffix";
-		}
-		return composite;
-	}
+    public void Insert(Exercicio exercicio)
+    {
+        ExercicioDal exercicioDal = new ExercicioDal();
+        exercicioDal.Insert(exercicio);
+    }
+
+    public List<Exercicio> SelectExercicios()
+    {
+        ExercicioDal exercicioDal = new ExercicioDal();
+        return exercicioDal.Select();
+    }
+
+    public void Update(Exercicio exercicio)
+    {
+        ExercicioDal exercicioDal = new ExercicioDal();
+        exercicioDal.Update(exercicio);
+    }
 }
