@@ -12,9 +12,12 @@ public interface IService
 {
     [OperationContract]
     List<Exercicio> SelectExercicios();
-    void Insert(Exercicio exercicio);
-    void Update(Exercicio exercicio);
-    void Delete(int idExercicio);
+    [OperationContract]
+    void InsertExercicios(Exercicio exercicio);
+    [OperationContract]
+    void UpdateExercicios(Exercicio exercicio);
+    [OperationContract]
+    void DeleteExercicios(int idExercicio);
 
    
 }

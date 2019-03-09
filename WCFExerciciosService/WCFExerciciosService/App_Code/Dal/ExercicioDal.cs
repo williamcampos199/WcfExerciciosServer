@@ -90,7 +90,7 @@ public class ExercicioDal
     public void Update(Exercicio exercicio)
     {
         conexao = new SqlConnection(strCon);
-        string sql = "Update Exercicio set nome =@nome, tipo=@tipo, repeticoes=@repeticoes, observacoes=@observacoes" +
+        string sql = "Update Exercicio set nome=@nome, tipo=@tipo, repeticoes=@repeticoes, observacoes=@observacoes  " +
             "where idexercicio=@id; ";
         SqlCommand cmd = new SqlCommand(sql, conexao);
         cmd.Parameters.AddWithValue("@id", exercicio.idExercicio);
